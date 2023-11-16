@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="./assets/style.css">
+</head>
+
+<body>
+    <input type="file" id="file-select" style="display: none;" oninput="handleSelect(event);" />
+    <div id="notification">
+        <span class="notify-txt"></span>
+        <span onclick="hideNotification()">❌</span>
+    </div>
+    <section class="task-window">
+        <nav>
+            <img src="./assets/captionify.png" />
+            <span>Captionify</span>
+        </nav>
+        </div>
+        <div class="current">
+            <p id="caption-box"></p>
+            <span onclick="copyCaption(this)">click to copy</span>
+        </div>
+        <div class="history">
+            <select size="2" id="history-list" onclick="retriveHistory(event)">
+            </select>
+        </div>
+    </section>
+    <section class="preview-window">
+        <div id="preview-tab" class="preview-tab preview-tab-upload" ondragover="showDrop()" ondragleave="hideDrop()"
+            ondrop="handleDrop(event)">
+
+        </div>
+        <div id="bottom-bar" class="bottom-bar" style="display: none;">
+            <button id="change-img" onclick="handleImageChange();"><img src="./assets/change.svg"
+                    class="icon" />Change</button>
+            <input placeholder="Start caption with" id="start-with" />
+            <button onclick="generateCaption();" id="generate-button">Generate✨</button>
+        </div>
+    </section>
+    <script src="./assets/script.js"></script>
+</body>
+
+</html>
